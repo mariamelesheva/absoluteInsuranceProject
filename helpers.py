@@ -19,6 +19,7 @@ class Helper:
 
     def click_on_elem(self, locator):
         elem = self.find_element_by_locator(locator)
+        self.scroll_into_view_by_elem(elem)
         elem.click()
 
     def find_elements_by_locator(self, locator):
@@ -45,6 +46,12 @@ class Helper:
 
     def get_field_value(self, locator):
         return self.find_element_by_locator(locator).get_attribute('value')
+
+    def scroll_into_view_by_elem(self, elem):
+        self.browser.execute_script("arguments[0].scrollIntoView();",
+                                    elem)
+        self.browser.execute_script("window.scrollTo(10, 0)",
+                                    elem)
 
 
 class BasePage:
