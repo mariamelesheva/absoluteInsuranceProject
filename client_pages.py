@@ -12,6 +12,7 @@ class TickBiteInsurancePolicyForm(BasePage):
     region_select_btn = '[id="region-button"]'
     calculate_btn = '[data-caption="Рассчитать"]'
     tick = '//div[text()="Клещ"]'
+    promocode_field = '[name="PROMOCODE"]'
 
     def open(self):
         self.browser.get(self.url)

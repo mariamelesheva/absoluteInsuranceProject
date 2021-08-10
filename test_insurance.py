@@ -13,6 +13,7 @@ class TestInsurance(unittest.TestCase):
         tick_bite_form.choose_insure_persons_count(2)
         tick_bite_form.select_mite()
         tick_bite_form.choose_region(City.krasnodar)
+        self.assertEqual(helper.get_field_value(tick_bite_form.promocode_field), '')
 
         calculate_form = tick_bite_form.calculate()
         calculate_form.check_sum(600)

@@ -43,6 +43,9 @@ class Helper:
                 EC.presence_of_element_located((By.XPATH, locator)),
                 message=f'Элемент не найден по xpath локатору: {locator}')
 
+    def get_field_value(self, locator):
+        return self.find_element_by_locator(locator).get_attribute('value')
+
 
 class BasePage:
     def __init__(self, helper: Helper):
